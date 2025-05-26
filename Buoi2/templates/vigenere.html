@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vigenere Cipher</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f1f3f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 15px;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+      color: #343a40;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .card {
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      background: white;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .card-title {
+      color: #007bff;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 5px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    button {
+      font-weight: 600;
+      padding: 10px 20px;
+      border-radius: 25px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Vigenere Cipher</h1>
+
+    <div class="card">
+      <div class="card-title">Encryption</div>
+      <form action="/vigenere/encrypt" method="post">
+        <div class="form-group">
+          <label for="inputPlainText">Plain Text</label>
+          <textarea id="inputPlainText" name="inputPlainText" class="form-control" rows="4" placeholder="Enter plain text" required autofocus></textarea>
+        </div>
+        <div class="form-group">
+          <label for="inputKeyPlain">Key (text)</label>
+          <input type="text" id="inputKeyPlain" name="inputKeyPlain" class="form-control" placeholder="Enter key" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Encrypt</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Decryption</div>
+      <form action="/vigenere/decrypt" method="post">
+        <div class="form-group">
+          <label for="inputCipherText">Cipher Text</label>
+          <textarea id="inputCipherText" name="inputCipherText" class="form-control" rows="4" placeholder="Enter cipher text" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="inputKeyCipher">Key (text)</label>
+          <input type="text" id="inputKeyCipher" name="inputKeyCipher" class="form-control" placeholder="Enter key" required />
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Decrypt</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
